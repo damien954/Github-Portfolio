@@ -1,0 +1,183 @@
+// ------------------------------------------------------------------
+// File name:   ArrayMain.cpp
+// Assign ID:   PROG3_Array -- PROG3c -- Array 
+//              (Main program, with FUNCTION CALLS.)
+// Due Date:    02/06/15 at 11 
+//
+// Purpose:     Give student experience performing basic array operations
+//              implemented as functions..
+//
+// Author:      dcunningham Damien Cunningham
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <math.h>
+#include <fstream>
+#include <iomanip>
+#inclide "ArrayFunctions.h"
+
+using namespace std;
+
+int main()
+{
+
+   
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+   
+   int N,max=0,min=0,sum=0,minpos=0;
+   ofstream outF,outFile;
+   string Filename;
+   
+   int First[25],Second[25],Third[25];  
+
+   //-| ------------------------------------------------------------------
+   //-| 1. Load N values from the keyboard into the array named First. 
+   //-|
+   //-|    NOTE: N must be >= 0.
+   //-|
+   //-|    Prompt before starting: 
+   //-|     "Enter N, the #values (must be >= 0): "
+   //-|    Prompt for each value: 
+   //-|     "Enter next value: "
+   //-|
+   //-|    Function prototype: void Load(int A[], int & Asize);
+   //-| ------------------------------------------------------------------
+  
+
+
+   Load(int First, int & N);
+   
+
+   //-| ------------------------------------------------------------------  
+   //-| 2. Display the N values in array First, ALL ON ONE LINE.
+   //-|
+   //-|             Output format: xx VALUES in First: xx xx xx xx ... xx
+   //-|
+   //-|           Function prototype: 
+   //-|               void Display(string OutputLabel, int B[], int Bsize);
+   //-| ------------------------------------------------------------------
+   
+   Display(" VALUES in First: ", First, N);
+   
+   //-| ------------------------------------------------------------------  
+   //-| 3. Display the N values in array First, IN REVERSE ORDER, 
+   //-|    all on one line.
+   //-|
+   //-|    Output format: REVERSED First VALUES: xx xx xx xx ... xx
+   //-|
+   //-|    Function prototype: 
+   //-|    void DisplayReverse(string OutputLabel, int C[], int Csize);
+   //-| ------------------------------------------------------------------
+   DisplayReverse("REVERSED First VALUES: ", First, N)
+   //-| ------------------------------------------------------------------  
+   //-| 4. Determine the largest value in array First, and print it.
+   //-|
+   //-|    Output format: ARRAY First MAX = xxx
+   //-|
+   //-|    Function prototype: int MaxValue (int [], int );
+   //-| ------------------------------------------------------------------
+   
+   cout<<"ARRAY First MAX = "<<MaxValue (First, N );
+   cout<<endl;
+
+   
+   //-| ------------------------------------------------------------------  
+   //-|  5. Determine the smallest value in array First, and print it.
+   //-|
+   //-|             Output format: First MINIMUM = xxx
+   //-|
+   //-|
+   //-|           Function prototype: void Smallest(int [], int, int & minvalue );
+   //-| ------------------------------------------------------------------
+   min = Smallest(First, N, min);
+   cout<<"First MINIMUM = "<< min;
+   cout<<endl;
+   //-| ------------------------------------------------------------------  
+   //-|  6. Calculate the sum of the values in array First, and print it.
+   //-|
+   //-|     Output format: SUM OF First VALUES = xxx
+   //-|
+   //-|
+   //-|     Function prototype: int ArraySum(int [], int );
+   //-| ------------------------------------------------------------------
+
+   cout<<"SUM OF First VALUES = "<<ArraySum(First,N);
+   cout<<endl;
+   
+   //-| ------------------------------------------------------------------  
+   //-| 7. Determine the POSITION of the smallest value in array First, 
+   //-|    and print it.
+   //-|
+   //-|    Output format: SMALLEST VALUE in First AT [xx]
+   //-|
+   //-|    Function prototype: int ArraySum(int [], int );
+   //-| ------------------------------------------------------------------
+   
+   cout<<"SMALLEST VALUE in First AT ["<< minPosition(First, N ) << "]";
+   cout<<endl;
+   //-| ------------------------------------------------------------------  
+   //-| 8. For each element in First, store the square of the value
+   //-|    into the corresponding element in array Second.
+   //-|
+   //-|    Function prototype: 
+   //-|     void MakeSquare(int Size, int A[], int B[]);
+   //-| ------------------------------------------------------------------
+   
+   MakeSquare(int N, First, Second);
+
+   //-| ------------------------------------------------------------------  
+   //-| 9. Write the N values in array Second to file named 
+   //-|           'arraySecond', ALL ON ONE LINE (values separated by one space).
+   //-|
+   //-|             Output format: xx xx xx xx ... xx
+   //-|
+   //-|
+   //-|            Function prototype: void SaveToFile(int Xsize, int X[]);
+   //-| ------------------------------------------------------------------
+   SaveToFile(N, First)
+   cout<<endl;
+   //-| ------------------------------------------------------------------  
+   //-| 10. For each element in First and Second, store the sum of the
+   //-|             elements into array Third.
+   //-|
+   //-|              Note: First[i] + Second[i] ==> Third[i]
+   //-|
+   //-|           Function prototype: 
+   //-|               void SumArray(int Size, int A[], int B[], int C[]);
+   //-| ------------------------------------------------------------------
+   SumArray(int N, First, Second, Third)
+   //-| ------------------------------------------------------------------  
+   //-| 11. Read the name of an output file. Open the file. Then write values
+   //-|          in array Third to this ouput file, ONE VALUE PER LINE, using
+   //-|          an output field of width 5.
+   //-|
+   //-|             Output format: xxxxx 
+   //-|                            xxxxx
+   //-|                            ...
+   //-|                            xxxxx
+   //-|      
+   //-|
+   //-|           Function prototype: 
+   //-|                void SaveArray(ostream & outF, int Zsize, int Z[]);
+   //-| ------------------------------------------------------------------
+   cin>>Filename;
+   outF.open(Filename.c_str());
+
+   SaveArray(outF, N, Third)
+
+   outF.close();
+   
+   
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship again.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+
+   return 0;
+
+}//main

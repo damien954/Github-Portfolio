@@ -1,0 +1,5 @@
+insert into PRODUCT values(050,'WINNING SALES','DVD',19.95,0343);
+insert into PRODUCT values(010,'25 MISTAKES','BOOK',7.99,0234);
+insert into PRODUCT values(028,'CLOSING THE DEAL','BOOK',8.50,1001);
+insert into PRODUCT values(005,'VERNON RATTLER BIO','BOOK',12.99,0983);
+insert into PRODUCT values(029,'COMMSION OR BUST','DVD',24.99,0321);

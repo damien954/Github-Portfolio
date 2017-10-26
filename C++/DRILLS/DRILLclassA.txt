@@ -1,0 +1,273 @@
+ Problem #1:        
+-------------------------------
+[Points = 5]
+
+//
+//      +------------------------------+
+//      | class STUFF                  |
+//      |                              |
+//      |  +---------------------+     |
+//      |  | int q;              |     |
+//      |  +---------------------+     |
+//      |-----------------------+      |
+//      | STUFF (int m, int n); |      |
+//      |-----------------------+      |
+//      | void Set_q(int val);|        |
+//      |---------------------+        |
+//      |-----------+  +---------------|
+//      | STUFF (); |  | int p;        |
+//      |-----------+  +---------------|
+//      | Show_q(); |                  |
+//      +------------------------------+
+//
+// Complete the declaration of this class using in-line member function definitions.
+// The default constructor intializes member variables p and q to 99.
+// The other constructor intializes member variables p and q with the first and
+// second argument, respectively.
+// -----------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+class STUFF
+{
+public:
+STUFF(){p=99; q=99;};
+STUFF(int m, int n){p=m; q=n;};
+void Set_q(int val){q=val;};
+void Show_q(){cout<<q;}
+private:
+int q;
+
+};// DO NOT MOVE OR DELETE.                        
+#include "mainptclass71400.cpp"
+
+Problem #2:         
+-------------------------------
+[Points = 10]
+
+
+// ------------------------------------------------------------------------
+// Complete the class declaration below, using in-line definitions for
+// member functions.
+// ------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class FRIENDS
+{
+  public:
+   FRIENDS(){numFriends=0;};
+   void Load(int N, string Names[]){Friends[N]=Names[N];}; // Copy array Names into array Friends.
+   void Show(){for(int i=0; i<numFriends; i++) cout<<Friends[i]<<" ";};                      // Display values in Friends array.
+   int FriendCount(){return numFriends;};
+ private:
+   int numFriends;
+   string Friends[20];
+};
+
+
+                        // DO NOT MOVE OR DELETE.
+#include "mainptclass72400.cpp"
+
+Problem #3:         
+-------------------------------
+[Points = 5]
+
+
+// Consider the class diagram below.
+//
+//      +------------------------------+
+//      | class moSTUFF                |
+//      |                              |
+//      |------------+                 |
+//      | moSTUFF(); |                 |
+//      |-------------------+          |
+//      | moSTUFF(float x); |          |
+//      |---------------------+        |
+//      | void Set_q(int val);|        |
+//      |---------------------+        |
+//      | int Get_q();        |        |
+//      |---------------------+        |
+//      | int q;              |        |
+//      |---------------------+        |
+//      +------------------------------+
+//
+// Complete the declaration of this class using in-line member function definitions.
+// The default constructor intializes member variable q to 0.
+// The other constructor intializes the member variable q with the integer
+// part of the parameter x.
+// -----------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class moSTUFF
+{
+ public:
+ moSTUFF(){q=0;};
+ moSTUFF(float x){q=x;};
+ void Set_q(int val){q=val;};
+ int Get_q(){return q;};
+ int q;
+
+};
+
+
+                        // DO NOT MOVE OR DELETE.
+#include "mainptclass71800.cpp"
+
+Problem #4:         
+-------------------------------
+[Points = 9]
+
+
+// --------------------------------------------------------------------
+// Complete the class declaration below, using in-line definitions for
+// member functions.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+class FRIENDS
+{ public:
+   FRIENDS() {numFriends=0;};
+   void Load(int count, string F[]){Friends[count]=F[count];};
+   // Copy array F into array Friends.
+   void Reverse(){for(int i=0; i<count; i++)cout<<Friends[i];};                   
+   // Display friends in reverse order.
+   void Forward(){for(int i=count; i>=0; k--)cout<<Friends[k];};                   
+   // Display friends in forward order.
+   void setSize(int count){numFriends=count;};
+   int FriendCount(){return numFriends;};
+  private:
+   int numFriends;
+   string Friends[20];
+};
+
+
+                        // DO NOT MOVE OR DELETE.
+#include "mainptclass72600.cpp"
+
+Problem #5:         
+-------------------------------
+[Points = 6]
+
+// Consider the class diagram below.
+//
+//      +------------------------------+
+//      | class STUFF                  |
+//      |                              |
+//      |  +---------------------+     |
+//      |  | int x, z;           |     |
+//      |  +---------------------+     |
+//      |  +---------------------+     |
+//      |  | void Set_x(int val);|     |
+//      |  +---------------------+     |
+//      |----------+  +----------------|
+//      | Show_x();|  | Show_z();      |
+//      |----------+  +----------------|
+//      | STUFF ();|  | int y, p;      |
+//      |----------+  +----------------|
+//      +------------------------------+
+//
+//
+// Complete the declaration of this class using in-line member function definitions.
+// The default constructor initializes x, y and z to 1, 2 and 3, respectively, and
+// p to 43.
+// Show_x(); and Show_z() display value of x or z, respectively.
+// ------------------------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+class STUFF
+{
+ public:
+void Show_x(){cout<<x;};
+void Show_z(){cout<<z;};
+STUFF(){x=1; y=2; z=3; p=43;};
+int y,p;
+private:
+int x,z;
+void Set_x(int val){x=val;};
+
+};
+
+
+                        // DO NOT MOVE OR DELETE.
+#include "mainptclass71200.cpp"
+Problem #6:         
+-------------------------------
+[Points = 8]
+
+// Consider the class diagram below.
+//
+//      +------------------------------+
+//      | class STUFF                  |
+//      |                              |
+//      |  +---------------------+     |
+//      |  | int q;              |     |
+//      |  +---------------------+     |
+//      |---------------------+        |
+//      | void Set_p(int val);|        |
+//      |---------------------+        |
+//      | void Set_q(int val);|        |
+//      |---------------------+        |
+//      |----------+   +--------+      |
+//      | STUFF(); |   | int p; |      |
+//      |----------+   +--------+      |
+//      |--------------+  +------------|
+//      | STUFF(int n);|  | Show();    |
+//      +------------------------------+
+//
+// Complete the declaration of this class using in-line member function definitions.
+// The default constructor intializes member variable p to -99, and q to 99.
+// The other constructor initializes q to 7, and p to the n'th odd number (1,3,5...).
+// Function Show displays values of member variables q and p, respectively.
+// ----------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class STUFF
+{
+ public:
+ void Set_p(int val){p=val;}; 
+ void Set_q(int val){q=val;};
+ STUFF();{p=-99; q=-99;};
+ STUFF(int n);{q=7;};
+ Show(){cout<<q; cout<<p;};
+ private:
+ int q;
+ int p;
+#include <iostream>
+using namespace std;
+
+class STUFF
+{   public:  
+    STUFF(){p=-99;q=99;}
+    STUFF (int n)
+    { int A[50];for(int i=0; i<n; i++)
+      {A[i]=(2*i)+1;}      
+      p=A[n-1];
+      q=7;
+    }
+    void Set_p(int val){p=val;}
+    void Set_q(int val){q=val;}
+    void Show(){cout << q << p;}
+	private:
+	int p;
+	int q;  
+
+
+
+};
+  // DO NOT MOVE OR DELETE.
+#include "mainptclass72000.cpp"
+
+
+};
+
+
+                        // DO NOT MOVE OR DELETE.
+#include "mainptclass72000.cpp"
+
+
+
+
+
+

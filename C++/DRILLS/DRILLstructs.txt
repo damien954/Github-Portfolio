@@ -1,0 +1,364 @@
+Enter Problem# [1-9]: 
+
+Problem #1:         
+-------------------------------
+[Points = 3]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+
+//           9053:3.40:Obama Ans:3.40 Obama 9053
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   struct Student
+   {
+      long ID;
+      string Name;
+      float GPA;
+   };
+   Student JohnDoe;
+
+   cin >> JohnDoe.GPA >> JohnDoe.Name>> JohnDoe.ID;
+
+   cout << JohnDoe.ID << ":"
+        << fixed << setprecision(2) << JohnDoe.GPA << ":"
+        << JohnDoe.Name << endl;
+
+   return 0;
+}//main
+Problem #2:         
+-------------------------------
+[Points = 5]
+
+// --------------------------------------------------------------------
+// Background: A basketball team had only two players who scored scored or
+//             got a rebound in the last game.
+//
+// Function: Complete the following program so that it reads player data
+//           (jersey#, points and rebounds) for the two players, and
+//           calculates the total points and rebounds for the team.
+//
+// Example: Input: 17 12 8    4 36 12
+//          Output: 48 POINTS, 20 REBOUNDS
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   struct Player
+   {
+      int JerseyNumber;
+      int Points;
+      int Rebounds;
+   };
+   Player P1, P2;
+ 
+   cin >> P1.JerseyNumber >> P1.Points >> P1.Rebounds;
+   cin >> P2.JerseyNumber >> P2.Points >> P2.Rebounds;
+ 
+ 
+   cout << P1.Points + P2.Points << " POINTS" << ", " 
+        << P1.Rebounds + P2.Rebounds <<" REBOUNDS"; 
+
+ cout<<endl;
+
+   return 0;
+
+}//main
+Problem #3:         
+-------------------------------
+[Points = 4]
+
+
+// --------------------------------------------------------------------
+// Function: Complete the following program by making calls to the
+//           GetTime function.
+// --------------------------------------------------------------------
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+
+
+#include <iostream>
+using namespace std;
+struct Time
+{
+   int startMin;
+   int endMin;
+};
+void GetTime(Time & AnyTime)
+{
+   cin >> AnyTime.startMin >> AnyTime.endMin;
+}
+int main()
+{
+   int eventTimes = 0;
+   Time Event1, Event2;
+
+   // Call GetTime for each of the two events.
+   GetTime(Event1);
+   GetTime(Event2);
+
+
+   eventTimes = (Event1.endMin - Event1.startMin) +
+                (Event2.endMin - Event2.startMin);
+   cout << eventTimes << " MINUTES" << endl;
+
+   return 0;
+}//main
+Problem #4:        
+-------------------------------
+[Points = 4]
+
+
+// --------------------------------------------------------------------
+// Function: Complete the following program by making calls to the
+//           GetTime function.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+struct Time
+{
+   int startMin;
+   int endMin;
+};
+void GetTime(Time & AnyTime)
+{
+   cin >> AnyTime.startMin >> AnyTime.endMin;
+}
+int main()
+{
+   int eventTimes = 0;
+   Time Event1, Event2, Event3;
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+
+
+
+   // Call GetTime for each of the three events.
+   GetTime(Event1);
+   GetTime(Event2);
+   GetTime(Event3);
+
+
+   eventTimes = (Event1.endMin - Event1.startMin) +
+                (Event2.endMin - Event2.startMin) +
+                (Event3.endMin - Event3.startMin);
+   cout << eventTimes << " MINUTES" << endl;
+
+   return 0;
+}//main
+Problem #5:         
+-------------------------------
+[Points = 6]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           Mary and Jack have an average GPA of 3.50
+//           Ans:3.5 Jack 2094 2095 3.5 Mary
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+struct Student
+{
+   int ID;
+   string Name;
+   float GPA;
+};
+void GetStudent(Student & S)
+{ cin >> S.GPA >> S.Name >> S.ID; }
+
+void ReadStudent(Student & T)
+{ cin >> T.ID >> T.GPA >> T.Name; }
+
+int main()
+{
+   Student John, Jane;
+
+   GetStudent(Jane);
+   ReadStudent(John);
+
+   cout << John.Name + " and " + Jane.Name + " have an average GPA of "
+        << fixed << setprecision(2) << (John.GPA + Jane.GPA)/2  << endl;
+
+   return 0;
+}//main
+Problem #6:       
+-------------------------------
+[Points = 5]
+
+// --------------------------------------------------------------------
+// Background: A basketball team had only two players who scored scored or
+//             got a rebound in the last game.
+//
+// Function: Complete the following program so that it reads player data
+//           (jersey#, points and rebounds) for the two players, and
+//           announces the leading scorer.
+//
+// Example: Input: 17 36 8    4 8 12
+//          Output: PLAYER 17, 36 POINTS
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   struct Player
+   {
+      int JerseyNumber;
+      int Points;
+      int Rebounds;
+   };
+   Player P1, P2;
+
+   cin >> P1.JerseyNumber >> P1.Points >> P1.Rebounds;
+   cin >> P2.JerseyNumber >> P2.Points >> P2.Rebounds;
+   
+   if (P1.Points >= P2.Points)
+   cout << "PLAYER " << P1.JerseyNumber << ", " 
+        << P1.Points << " POINTS"; 
+   if (P2.Points >= P1.Points)
+   cout << "PLAYER " << P2.JerseyNumber << ", " 
+        << P2.Points << " POINTS";
+
+
+   cout<<endl;return 0;
+}//main
+Problem #7:         
+-------------------------------
+[Points = 5]
+
+
+// --------------------------------------------------------------------
+// Background: A basketball team had only two players who scored scored or
+//             got a rebound in the last game.
+//
+// Function: Complete the following program so that it reads player data
+//           (jersey#, points and rebounds) for the two players, and
+//           announces the leading rebounder.
+//
+// Example: Input: 17 36 8    4 8 12
+//          Output: PLAYER 4, 12 REBOUNDS
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   struct Player
+   {
+      int JerseyNumber;
+      int Points;
+      int Rebounds;
+   };
+   Player P1, P2;
+
+   cin >> P1.JerseyNumber >> P1.Points >> P1.Rebounds;
+   cin >> P2.JerseyNumber >> P2.Points >> P2.Rebounds;
+
+   if (P1.Rebounds >= P2.Rebounds)                 
+   cout << "PLAYER " << P1.JerseyNumber << ", " 
+        << P1.Rebounds << " REBOUNDS";  
+   if (P2.Rebounds >= P1.Rebounds)
+   cout << "PLAYER " << P2.JerseyNumber << ", " 
+        << P2.Rebounds << " REBOUNDS";   
+
+   return 0;
+}//main
+Problem #8:         
+-------------------------------
+[Points = 3]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           432879053:3.70:Roosevelt 
+//           Ans:3.70 Roosevelt 432879053
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   struct Student
+   {
+      long ID;
+      string Name;
+      float GPA;
+   };
+   Student JohnDoe;
+
+   cin >> JohnDoe.GPA >> JohnDoe.Name>> JohnDoe.ID;
+
+   cout << JohnDoe.ID << ":"
+        << fixed << setprecision(2) << JohnDoe.GPA << ":"
+        << JohnDoe.Name << endl;
+
+   return 0;
+}//main
+ Problem #9:         
+-------------------------------
+[Points = 6]
+
+// ------------------------------------------------------------------
+// Function: Complete the following program so that it:
+//
+//         (1) reads input in the form: xx^yyzz
+//             where: xx = ID, yy=GPA, zz=Name (can contain spaces)
+//
+//               Example: 123456789 3.75Karl Malden
+//
+//         (2) writes output in the form: xxxxxxxxx:y.yy:zz
+//               Example: 123456789:3.75:Karl Malden
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   struct Student
+   {
+      long ID;
+      string Name;
+      float GPA;
+   };
+   Student Rattler;
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+   cin >> Rattler.ID >> Rattler.GPA;
+   getline(cin,Rattler.Name);
+
+
+   cout << Rattler.ID << ":"
+        << fixed << setprecision(2) << Rattler.GPA << ":"
+        << Rattler.Name << endl;
+
+   return 0;
+}//main
+
+
+
+
+

@@ -1,0 +1,5 @@
+With a Bachelor’s degree in Computer Information Systems, a variety of skills and software knowledge, I am confident I will be an asset to your organization.
+My experience has provided me with variety of business skills which allow me to relate to all levels of management and work successfully with a diversity of personalities, customers, and end-users.
+I consider myself to be a results-oriented, dependable, and capable worker; who is not easily affected by job stress, and enjoy being challenged and working on projects that require me to work outside my comfort and knowledge set, continuing to learn new languages and development techniques.
+
+This is my github profolio that shows my coding on a small sample size. currentlty im in the process of organzitoizng  all of my sample code. please be paction with mw as i upload my documents. 

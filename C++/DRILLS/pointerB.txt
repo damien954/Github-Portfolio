@@ -1,0 +1,222 @@
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your job:
+//   1. Print YES if the list is sorted, NO otherwise.
+//
+//      *** NOTE: An empty list is SORTED!!
+// --------------------------------------------------------------------
+
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *p; int yes=0; int value; p=Head;
+        cin >> value;
+        if (Head!=NULL)
+        {
+        while (p!=NULL)
+                {if (value == p->val) {cout << "YES"; yes =1;}
+                p=p->next;
+                }
+        if (yes==0) cout << "NO";
+        }
+        
+        if (Head == NULL) cout << "NO";
+
+
+
+
+
+
+   SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your job:
+//   1. Print YES if the list is sorted, NO otherwise.
+//
+//      *** NOTE: An empty list is SORTED!!
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * p, * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *q, *next2last; int yes=0;
+        if (Head !=NULL)
+        {       next2last=Head;
+                if(Head->next!=NULL)
+                {q=Head ->next;
+                while(q->next!=NULL)
+                {if(next2last->val > q ->val) yes=1;
+                next2last = q; q=q->next;
+                }
+        if(yes==0)cout <<"YES";
+        else {cout << "NO";}
+        }
+        else{cout << "YES";}
+        }
+        else {cout << "YES";}
+        
+SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+
+// --------------------------------------------------------------------
+// The program constructs a list. Your part:
+//    1. Display the maximum value in the list; -999 if list is empty.
+// --------------------------------------------------------------------
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE*p, *max; p=Head; max=Head;
+if(Head!=NULL)
+{if (Head->next==NULL) max =Head;
+        else {
+        p=p->next;
+        while(p->next!=NULL)
+        {if(max->val < p->val) {max=p;} p=p->next;}
+        }
+        if(max->val < p->val) {max=p;} cout << max->val<<endl;
+        }
+else{cout << -999; return 0;}
+
+
+   SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your job:
+//   1. Read an input value;
+//   2. Insert the value as the first node in the list.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *p;
+        p=new NODE;
+        cin>> p->val;
+        p->next=Head;
+        Head=p;
+
+        
+
+
+
+
+   SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your job:
+//   1. Delete the last node in the list.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *q, *next2last;
+        if (Head!=NULL)
+                {next2last=Head;
+        if (Head->next !=NULL)
+        {       q = Head -> next;
+        while (q->next!=NULL)
+        {next2last=q; q=q->next;}
+        delete q;
+        next2last->next=NULL;
+        }
+        else {Head=NULL;}
+        }
+
+
+   SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+
+
+
+
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your part:
+//    1. Delete the first value in the list.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *p;
+        p=Head;
+        
+        if (p!=NULL)
+        {
+         if (p->next!=NULL){Head=p->next; delete p;}
+        else {delete p; Head=NULL;}
+        }
+
+
+
+   cout << endl << "LIST: "; SHOWLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0;                   // DO NOT MOVE, DELETE or MODIFY.
+}//main
+// WORKSPACE: NODE.h SHOWBUILD.cpp
+// --------------------------------------------------------------------
+// The program constructs a list. Your job:
+//    1. Display the number of values in the list.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "NODE.h"
+   //struct NODE {  int val; NODE * next;};
+#include "SHOWBUILD.cpp"
+int main()
+{
+   NODE * Head; BUILDLIST(Head); // DO NOT MOVE, DELETE or MODIFY.
+        NODE *p; int count=0; p=Head;
+        if(p!=NULL)
+        {
+                if (p->next!=NULL)
+                {while(p!=NULL) {p=p->next; ++count;} cout<<count;}
+        else {cout <<1;}
+        }
+        else {cout <<0;}
+
+
+   SHOWLIST(Head);         // DO NOT MOVE, DELETE or MODIFY.
+   cout << endl; return 0; // DO NOT MOVE, DELETE or MODIFY.
+}//main
+
+
+
+
+

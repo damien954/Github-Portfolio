@@ -1,0 +1,565 @@
+SQL> @ec_desc
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ART_ID                                    NOT NULL NUMBER(4)
+ ART_NAME                                           VARCHAR2(20)
+ ART_BACKUP                                         NUMBER(4)
+ ART_FEE                                            NUMBER(7,2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMP_ID                                   NOT NULL NUMBER(5)
+ COMP_NAME                                          VARCHAR2(20)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMM_CODE                                 NOT NULL NUMBER(5)
+ COMM_PROD                                          VARCHAR2(20)
+ COMP_ID                                            NUMBER(2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PERF_ROLE                                          VARCHAR2(30)
+ PERF_DATE                                          DATE
+ ART_ID                                    NOT NULL NUMBER(4)
+ COMP_ID                                   NOT NULL NUMBER(5)
+
+SQL> select * from cat;
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+ARTIST                         TABLE                                            
+ASSIGNMENT                     TABLE                                            
+ATTENDENCE                     TABLE                                            
+BIKE                           TABLE                                            
+BIN$CVT55gjAcmbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOg2BJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOg6BJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOg9BJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgeBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOghBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgkBJbgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CVcDFOgnBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgqBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgtBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgwBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOgzBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhABJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhDBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhGBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhJBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhMBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhPBJbgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CVcDFOhSBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhVBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhYBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhbBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOheBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhhBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVcDFOhkBJbgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBj+VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBj/VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBj0VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBj1VeDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CVmwRBj9VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBjzVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBk0VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBk5VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBk6VeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkAVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkBVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkGVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkJVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkRVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkWVeDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CVmwRBkbVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkeVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkhVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkmVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBkrVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlDVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlIVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlLVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlOVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlPVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlYVeDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CVmwRBldVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlgVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBljVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVmwRBlkVeDgVAADuhhx6w==$0 TABLE                                            
+BIN$CVwjnfSIRkfgVAADuhhx6w==$0 TABLE                                            
+BIN$CVwjnfSNRkfgVAADuhhx6w==$0 TABLE                                            
+BIN$CVwjnfSQRkfgVAADuhhx6w==$0 TABLE                                            
+BIN$CVwjnfSTRkfgVAADuhhx6w==$0 TABLE                                            
+BIN$CVwjnfSURkfgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzx+LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzx4LtDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CW0CFzx7LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxmLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxnLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxoLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxpLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxqLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxrLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxsLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxtLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxuLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxvLtDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CW0CFzxwLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxxLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxyLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzxzLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzy/LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzy1LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzy2LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzy5LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzy8LtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyBLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyELtDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CW0CFzyHLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyKLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyNLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyQLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyTLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyWLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyZLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzycLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyfLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyiLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzylLtDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CW0CFzyoLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzypLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzysLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyvLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzyyLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzzCLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW0CFzzFLtDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7D/MnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7D1MnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7D2MnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DfMnDgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CW2Tv7DgMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DjMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DmMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DpMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DsMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DvMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7DyMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7ECMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CW2Tv7EDMnDgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKn1axzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKn6axzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CWn6uKn9axzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnJaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnKaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnLaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnQaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnTaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnWaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnZaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnaaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnfaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKniaxzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CWn6uKnlaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnoaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnpaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnsaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnvaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKnyaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoAaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoDaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoEaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoJaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoMaxzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CWn6uKoPaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWn6uKoQaxzgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVL/YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVL2YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVL3YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVL8YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVLrYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVLwYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVLzYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVM/YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVM1YrPgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CWnHFVM2YrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMCYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMDYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMMYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMVYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMaYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMdYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMgYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMhYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMqYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVMvYrPgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CWnHFVMyYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNEYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNHYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNKYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNNYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNOYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNTYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNWYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNZYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNcYrPgVAADuhhx6w==$0 TABLE                                            
+BIN$CWnHFVNdYrPgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CXouYWU1G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWU4G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWU5G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWUsG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWUvG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWUyG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWV/G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWV2G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWV5G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWV8G+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVCG+PgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CXouYWVFG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVIG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVJG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVMG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVPG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVSG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVVG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVYG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVbG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVeG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVhG+PgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CXouYWVkG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVnG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVqG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVtG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVwG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWVzG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWWCG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWWFG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWWIG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWWLG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CXouYWWOG+PgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CXouYWWRG+PgVAADuhhx6w==$0 TABLE                                            
+BIN$CZZ4/4doHmfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZZ4/4dpHmfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZb+UY5LHr/gVAADuhhx6w==$0 TABLE                                            
+BIN$CZb+UY5QHr/gVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0+HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW03HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW04HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW09HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0JHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0OHzfgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZclMW0THzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0UHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0ZHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0aHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0fHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0gHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0lHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0mHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0rHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0sHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW0xHzfgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZclMW0yHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1/HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW10HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW11HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW16HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1DHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1EHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1FHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1KHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1LHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1QHzfgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZclMW1THzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1UHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1ZHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1eHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1fHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1kHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1pHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1qHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW1vHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW20HzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW21HzfgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZclMW2EHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2JHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2OHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2THzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2UHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2ZHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2eHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2fHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2kHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2pHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZclMW2qHzfgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZclMW2vHzfgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E+9IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/+IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E//IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/5IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/CIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/DIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/IIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/RIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/WIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/XIijgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZlJ6E/cIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/lIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/qIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/rIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6E/wIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FA1IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FA6IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FA7IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAEIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FANIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FASIijgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZlJ6FATIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAYIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAhIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAmIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAnIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FAsIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FB2IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FB7IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FB8IijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBAIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBJIijgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZlJ6FBOIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBPIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBUIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBdIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBiIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBjIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBoIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBtIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBuIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FBzIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCBIijgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CZlJ6FCEIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCJIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCKIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCPIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCSIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCXIijgVAADuhhx6w==$0 TABLE                                            
+BIN$CZlJ6FCYIijgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyy2AnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyy9AnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzAAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzDAnPgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$Cb0TXyzGAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzJAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzMAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzRAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzaAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzdAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzgAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzjAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzmAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$Cb0TXyzpAnPgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM6/UrzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CbeVVM7+UrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM71UrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM74UrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM77UrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7IUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7LUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7QUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7XUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7aUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7dUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7gUrzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CbeVVM7jUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7mUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7rUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM7yUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8BUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8GUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8NUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8QUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8TUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8WUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8ZUrzgVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$CbeVVM8cUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8fUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$CbeVVM8iUrzgVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3HoMPSdPjgVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkS3dP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkS6dP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkS9dP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTAdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTDdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTGdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTJdP7gVAADuhhx6w==$0 TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+BIN$Cd3RtkTMdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTPdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTSdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTVdP7gVAADuhhx6w==$0 TABLE                                            
+BIN$Cd3RtkTYdP7gVAADuhhx6w==$0 TABLE                                            
+BONUS                          TABLE                                            
+CLASS                          TABLE                                            
+COMMERCIAL                     TABLE                                            
+COMPANY                        TABLE                                            
+CONTACT                        TABLE                                            
+CUSTOMER                       TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+DEMO                           TABLE                                            
+DEPT                           TABLE                                            
+EMP                            TABLE                                            
+EMPLOYEE                       TABLE                                            
+ENROLLMENT                     TABLE                                            
+INVOICE                        TABLE                                            
+LINEITEM                       TABLE                                            
+NEW_DATE                       TABLE                                            
+PERFROMS                       TABLE                                            
+PRODUCT                        TABLE                                            
+PROJECT                        TABLE                                            
+
+TABLE_NAME                     TABLE_TYPE                                       
+------------------------------ -----------                                      
+SALGRADE                       TABLE                                            
+SEMINAR                        TABLE                                            
+SEMINAR2                       TABLE                                            
+STUDENT                        TABLE                                            
+
+389 rows selected.
+
+SQL> @ec_show
+
+    ART_ID ART_NAME             ART_BACKUP    ART_FEE                           
+---------- -------------------- ---------- ----------                           
+      1000 MIKE                       2000        125                           
+      2000 JOHN                       3000     150.25                           
+      3000 BRATT                      2000      175.5                           
+      4000 MATT                       5000     200.75                           
+      5000 ZACK                       1000        225                           
+
+
+   COMP_ID COMP_NAME                                                            
+---------- --------------------                                                 
+        10 Pesi                                                                 
+        20 Coke                                                                 
+        30 Apple                                                                
+        40 Beats                                                                
+        50 DQ                                                                   
+
+
+ COMM_CODE COMM_PROD               COMP_ID                                      
+---------- -------------------- ----------                                      
+     10111 Summer                       10                                      
+     10222 Winter                       20                                      
+     10333 Spring                       30                                      
+     10444 Fall                         40                                      
+     10555 Autumn                       50                                      
+
+
+PERF_ROLE                      PERF_DATE     ART_ID    COMP_ID                  
+------------------------------ --------- ---------- ----------                  
+Dance                          09-APR-15       5000         10                  
+Sing                           01-MAR-16       4000         20                  
+Drums                          11-NOV-15       3000         30                  
+flute                          25-DEC-14       2000         40                  
+Guitar                         30-NOV-14       1000         50                  
+
+SQL> spool off

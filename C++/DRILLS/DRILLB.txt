@@ -1,0 +1,278 @@
+ Problem #1:      
+-------------------------------
+[Points = 4]
+
+// --------------------------------------------------------------------
+// Function:
+//   Declare SCORES record named myScores and initialize to reflect a student
+//      who has taken all the tests and quizzes, and earned 92 on all exams,
+//      and 94 on all quizzes.
+//   Call the function Analyze, passing the myScores record.
+//
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "structBfunctions.h"
+// ====> Contains:
+// struct SCORES { int numTests; int numQuizzes; int Tscore[3]; int Qscore[4];};
+
+//void Analyze (SCORES S);
+
+int main()
+{
+
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+ SCORES myScores={3,4,{92,92,92},{94,94,94,94}};
+ Analyze (myScores);
+
+
+   cout << endl; return 0; // DO NOT MOVE or DELETE.
+}//main
+Problem #2:        
+-------------------------------
+[Points = 11]
+
+
+// --------------------------------------------------------------------
+// Function:
+//   Declare SCORES record named myScores.
+//   Read the number of tests and number of quizzes from keyboard.
+//   Read the name of the input file.
+//   Load the myScores record from the data in the input file.
+//   Write the required loops to determine the minimum
+//        test score and maximum quiz score.
+//   Display the minimum test score followed by the maximum quiz score.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+#include "structBfunctions.h"
+// ====> Contains:
+
+   // struct SCORES { int numTests; int numQuizzes; int Tscore[3]; int Qscore[4];};
+
+   // Function: Read N int values from open input file into array.
+   // void Load(istream & intF, int A[], int N);
+
+   //void Analyze (SCORES S);
+
+int main()
+{
+
+
+
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+   int Tnum=0,Qnum=0;
+   string Filename;
+   ifstream inF;
+   SCORES myScores;
+   int maxQ=0,minT=0; 
+   
+   cin >> Tnum; 
+   cin >> Qnum; 
+   cin >> Filename;
+   
+   inF.open(Filename.c_str());
+   Load(inF, myScores.Tscore, Tnum);
+   Load(inF, myScores.Qscore, Qnum);
+
+   for(int i = 0; i < Tnum; i++)
+   {
+     if(minT>myScores.Tscore[i])
+       minT=myScores.Tscore[i];
+   }
+   for(int k = 0; k < Qnum; k++)
+   {
+     if(maxQ < myScores.Qscore[k])
+       maxQ = myScores.Qscore[k];
+   }
+   cout << minT << maxQ;
+   inF.close();
+
+
+
+
+   cout << endl; return 0; // DO NOT MOVE or DELETE.
+}//main
+Problem #3:       
+-------------------------------
+[Points = 8]
+
+
+// --------------------------------------------------------------------
+// Algorithm:
+//   1. Declare Gifts, an array of up to 10 TOY records.
+//   2. Read the name of the input file.
+//   3. Open the input file.
+//   4. Call function GetGifts to Load the array from the input file.
+//   5. Write the loop to calculate the total value of the gifts.
+//   6. Display the total value with 2 decimal places (no dollar sign).
+// --------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+#include "structBfunctions.h"
+
+// struct TOY { string whatItIs; float whatItCosts;};
+
+// *** Function Headers:
+// Function: Read the cost and description (possibly multiple words) and
+//           cost of each toy in the open input file.
+//void GetGifts(istream & giftF, TOY T[], int & Tsize)
+
+int main()
+{
+
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+
+
+
+   float ToT=0.0;
+   string Filename;
+   ifstream inF;
+   int gsize=10;
+   TOY Gifts[gsize];
+ 
+   cin >> Filename;
+
+   inF.open(Filename.c_str());
+   GetGifts(inF, Gifts, gsize);
+   for(int i = 0; i<gsize; i++)
+   {
+     ToT+= Gifts[i].whatItCosts;
+   }
+   cout<<setprecision(2)<<fixed<<ToT;
+   inF.close();
+
+
+
+
+   cout << endl; return 0; // DO NOT MOVE or DELETE.
+}//main
+
+Problem #4:        
+-------------------------------
+[Points = 8]
+
+
+// --------------------------------------------------------------------
+// Function:
+//   Declare SCORES record named myScores. 
+//   Read the number of tests and number of quizzes from keyboard.
+//   Read the name of the input file.
+//   Open the input file.
+//   Load the myScores record from the input file.
+//   Call the function Analyze, passing the myScores record.
+// --------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+using namespace std;
+#include "structBfunctions.h"
+// ====> Contains:
+
+   // struct SCORES { int numTests; int numQuizzes; int Tscore[3]; int Qscore[4];};
+
+   // Function: Read N int values from open input file into array.
+   // void Load(istream & intF, int A[], int N);
+
+   //void Analyze (SCORES S);
+
+int main()
+{
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+   
+   int Tnum=0,Qnum=0;
+   string Filename;
+   ifstream inF;
+   SCORES myScores; 
+   
+   cin >> Tnum; 
+   cin >> Qnum; 
+   cin >> Filename;
+   
+   inF.open(Filename.c_str());
+   Load(inF, myScores.Tscore, Tnum);
+   Load(inF, myScores.Qscore, Qnum);
+
+  
+   inF.close();
+   Analyze (myScores);   
+
+   cout << endl; return 0; // DO NOT MOVE or DELETE.
+}//main
+Problem #5:         
+-------------------------------
+[Points = 9]
+
+// --------------------------------------------------------------------
+// Algorithm:
+//   Declare Gifts, an array of up to 10 TOY records.
+//   Read in a toy price limit.
+//   Read in name of input file.
+//   Open the input file.
+//   Call function GetGifts to Load the array from the open file.
+//   Write a loop to print out the description of each toy whose
+//         cost is below the price limit.
+// --------------------------------------------------------------------
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+using namespace std;
+#include "structBfunctions.h"
+
+// struct TOY { string whatItIs; float whatItCosts;};
+
+// *** Function Headers:
+// Function: Read the cost and description (possibly multiple words) and
+//           cost of each toy in the open input file.
+//
+// Sample input line: 27.95 Barbie and Ken doll
+//void GetGifts(istream & giftF, TOY T[], int & Tsize)
+
+int main()
+{
+
+
+
+   // --------------------------------------------------------------------
+   // WARNING: DO NOT ISSUE PROMPTS or LABEL OUTPUT.
+   // --------------------------------------------------------------------
+   float PL;
+   string Filename;
+   ifstream inF;
+   int gsize=10;
+   TOY Gifts[gsize];
+
+   cin >> PL; 
+   cin >> Filename;
+
+   inF.open(Filename.c_str());
+   GetGifts(inF, Gifts, gsize);
+   for(int i = 0; i<gsize; i++)
+   {
+     if(Gifts[i].whatItCosts < PL)
+      cout << Gifts[i].whatItIs;
+   }
+   inF.close();
+
+
+
+
+
+
+   cout << " DONE" << endl; return 0; // DO NOT MOVE or DELETE.
+}//main
+
+

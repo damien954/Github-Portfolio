@@ -1,0 +1,4 @@
+desc ARTIST;
+desc COMPANY;
+desc COMMERCIAL;
+desc PERFROMS;

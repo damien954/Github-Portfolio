@@ -1,0 +1,18 @@
+Damien Cunningham
+cunninghamdamien123@gmail.com
+
+
+unsigned hash(int* x)
+{
+   int i = 0;
+   unsigned value = 0;
+   
+   while (x[i] != ‘\0’)
+   {
+      value = (s[i] + 43*value) % 113;
+      i++;
+   }
+   return value;
+}
+
+

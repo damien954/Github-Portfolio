@@ -1,0 +1,19 @@
+@ARTIST;
+@COMPANY;
+@COMMERCIAL;
+@PERFROMS;
+
+desc ARTIST;
+desc COMPANY;
+desc COMMERCIAL;
+desc PERFROMS;
+
+@ARTIST_insert;
+@COMPANY_insert;
+@COMMERCIAL_insert;
+@PERFROMS_insert;
+
+select * from ARTIST;
+select * from COMPANY;
+select * from COMMERCIAL;
+select * from PERFROMS;

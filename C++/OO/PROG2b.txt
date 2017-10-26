@@ -1,0 +1,99 @@
+// ------------------------------------------------------------------
+// File name:   StatisticsFunctions.cpp
+// Assign ID:   PROG2_Functions -- PROG2b -- StatisticsFunctions (Functions only) 
+// Due Date:    01/24/15 at 11 
+//
+// Purpose:     Give experience solving problems using functions, implementing
+//              programs that call functions, and implementing function bodies.
+//
+// Author:      dcunningham Damien Cunningham
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomanip>
+#include "StatisticsFunctions.h"
+using namespace std;
+
+
+//-| ----------------------------------------------------------------------
+//-| Print the copyright notice declaring authorship again.
+//-| ----------------------------------------------------------------------
+cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+// --------------------------------------------------------------------
+// Compute sum of three float values.
+// --------------------------------------------------------------------
+float Sum(float a, float b, float c)
+{
+ return a+b+c;
+}
+
+// --------------------------------------------------------------------
+// Compute quotient of dividend (parameter 1) and divisor (param 2).
+// Return 0.0 when the divisor is zero.
+// --------------------------------------------------------------------
+float Quot(float p, float q)
+{
+ return p/q; 
+}
+
+// --------------------------------------------------------------------
+// Compute product of two float values.
+// --------------------------------------------------------------------
+void Prod(float & n, float m)
+{
+ n*=m;
+}
+
+// --------------------------------------------------------------------
+// Compute difference of two float values (parameters 2 and 3).
+// --------------------------------------------------------------------
+void Diff(float & dif, float d, float e)
+{
+  dif=d-e; 
+}
+
+// --------------------------------------------------------------------
+// Read float value from input stream; return success flag.
+// --------------------------------------------------------------------
+void ReadFloat(istream & inF, float & x, bool & y)
+{
+ if (y==true)
+ {   
+   inF >> x;
+ }
+}
+
+// --------------------------------------------------------------------
+// Starting on new line, display labeled output value with 
+// specified #decimal places.
+// --------------------------------------------------------------------
+void DisplayFloat(string label, float num, int deci)
+{ 
+  cout<<label<<setprecision(deci)<<fixed<<num<<endl;
+}
+
+// --------------------------------------------------------------------
+// Starting on new line, write labeled output value to output stream,
+// using specified #decimal places.
+// --------------------------------------------------------------------
+void WriteFloat(ostream & outF, string label, float num, int deci)
+{ 
+  outF<<label<<setprecision(deci)<< fixed<<num<<endl;
+}
+
+//-| ----------------------------------------------------------------------
+//-| Print the copyright notice declaring authorship again.
+//-| ----------------------------------------------------------------------
+cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+
+
+
+
+
+                
+
+
+

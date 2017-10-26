@@ -1,0 +1,178 @@
+// ------------------------------------------------------------------
+// File name:   Statistics.cpp
+// Assign ID:   PROG2_Functions -- PROG2a -- Statistics.cpp (main only) 
+// Due Date:    01/22/15 at 11 
+//
+// Purpose:     Give experience solving problems using functions, implementing
+//              programs that call functions, and implementing function bodies.
+//
+// Author:      dcunningham Damien Cunningham
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+#include <math.h>
+#include "StatisticsFunctions.h"
+//#include "StatisticsFunctions.cpp"
+
+using namespace std;
+
+int main()
+{
+
+   
+   ifstream inF;
+   ofstream outF;
+   float n1,n2,n3,n4,n5,n6,n7;
+   float sum=0,quot=0,Var=0, avg,Var1=0;
+   bool value;
+   
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+   
+   inF.open("prog2.dat");
+   outF.open("prog2stats");
+   
+   if (inF.fail())
+   {
+    
+         cout<<"FATAL ERROR: Can not open 'prog2.dat'";
+         cout<<" PROGRAM TERMINATING ...\n";
+	  exit(1);
+   }
+
+   //-| ------------------------------------------------------------------
+   //-| Read and 7 input values from input file 'prog2.dat'.
+   //-| ------------------------------------------------------------------
+    
+   ReadFloat(inF, n1, value);
+   if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#1";
+    exit(1);
+   }
+   ReadFloat(inF, n2, value); 
+   if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#2";
+    exit(1);
+   }
+
+   ReadFloat(inF, n3, value); 
+   if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#3";
+    exit(1);
+   }
+   ReadFloat(inF, n4, value); 
+   if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#4";
+    exit(1);
+   }
+   ReadFloat(inF, n5, value); 
+    if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#5";
+    exit(1);
+   }
+   ReadFloat(inF, n6, value); 
+    if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#6";
+    exit(1);
+   }
+   ReadFloat(inF, n7, value); 
+    if(value==false)
+   {
+    cout<<"PROGRAM TERMINATING: MISSING DATA VALUE#7";
+    exit(1);
+   }
+  
+   //-| ------------------------------------------------------------------
+   //-| Display the input values to the screen, and write to results file
+   //-| 'prog2stats' using 5 decimal places.
+   //-|
+   //-| NOTE: Label each output: "Value # = "           (#=1,2,3,...,7)
+   //-| ------------------------------------------------------------------
+   
+   WriteFloat(cout,"Value 1 = ", n1, 5);
+   WriteFloat(cout,"Value 2 = ", n2, 5);
+   WriteFloat(cout,"Value 3 = ", n3, 5);
+   WriteFloat(cout,"Value 4 = ", n4, 5);
+   WriteFloat(cout,"Value 5 = ", n5, 5);
+   WriteFloat(cout,"Value 6 = ", n6, 5);
+   WriteFloat(cout,"Value 7 = ", n7, 5);
+   
+   WriteFloat(outF,"Value 1 = ", n1, 5);
+   WriteFloat(outF,"Value 2 = ", n2, 5);
+   WriteFloat(outF,"Value 3 = ", n3, 5);
+   WriteFloat(outF,"Value 4 = ", n4, 5);
+   WriteFloat(outF,"Value 5 = ", n5, 5);
+   WriteFloat(outF,"Value 6 = ", n6, 5);
+   WriteFloat(outF,"Value 7 = ", n7, 5);
+
+   //-| ------------------------------------------------------------------
+   //-| Compute, display and write to results file the sum and average 
+   //-| of the 1st 2nd 5th and 7th values.
+   //-| 
+   //-| NOTE: 
+   //-|       Required labels are "SUM-4 = " and "AVG-4 = ". 
+   //-|       Requred #decimal places is 1 (sum), 2 (avg).
+   //-| ------------------------------------------------------------------
+   
+   sum=Sum(n1, n2, n5)+ Sum(n7, 0.0, 0.0);
+   quot=Quot(sum, 4.0);
+	
+   WriteFloat(cout,"SUM-4 = ", sum, 1);
+   WriteFloat(outF,"SUM-4 = ", sum, 1);
+   WriteFloat(cout,"AVG-4 = ", quot, 2);
+   WriteFloat(outF,"AVG-4 = ", quot, 2);
+       
+   //-| ------------------------------------------------------------------
+   //-| Compute, display and write to the results file the mean (average) 
+   //-| of the 7 input values.
+   //-| 
+   //-| NOTE: 
+   //-|       Required label for average of all 7: "AVERAGE = " 
+   //-|       Requred #decimal places = 3.
+   //-| ------------------------------------------------------------------
+   sum=Sum(Sum(n1, n2, n3), Sum(n4, n5, n6), n7);
+   quot=Quot(sum, 7.0); 
+   WriteFloat(cout,"AVERAGE = ", quot, 3);
+   WriteFloat(outF,"AVERAGE = ", quot, 3);
+       
+       
+   //-| ------------------------------------------------------------------
+   //-| Compute, display and write to the results file the variance of 
+   //-| the 7 input values, given the calculated mean (average).
+   //-| 
+   //-| NOTE: 
+   //-|       Required label for variance of all 7: "VARIANCE = " 
+   //-|       Requred #decimal places = 4.
+   //-| ------------------------------------------------------------------
+   avg=quot;
+    
+  Var1=pow((n1-avg),2) + pow((n2-avg),2)+ pow((n3-avg),2)+pow((n4-avg),2)+
+      pow((n5-avg),2)+pow((n6-avg),2)+pow((n7-avg),2);
+  Var=Var1/7;
+   WriteFloat(outF,"VARIANCE = ", Var, 4);
+   WriteFloat(cout,"VARIANCE = ", Var, 4);
+
+
+   outF <<endl;
+
+   inF.close();
+   outF.close();
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship again.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+
+   return 0;
+
+}//main

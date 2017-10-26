@@ -1,0 +1,250 @@
+// ------------------------------------------------------------------
+// File name:   ArrayFunctions.cpp 
+// Assign ID:   PROG3_Array -- PROG3b -- ArrayFunctions.cpp  
+//              (Array functions only. Can test with key-ArrayMain.o)
+// Due Date:    02/06/15 at 11 
+//
+// Purpose:     Give student experience performing basic array operations
+//              implemented as functions..
+//
+// Author:      dcunningham Damien Cunningham
+//
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <iomannip>
+#include "ArrayFunctions.h"
+
+using namespace std;
+// ----------------------------------------------------------------
+   
+// Function: Load N values from the keyboard into the array. 
+   
+//
+   
+//       NOTE: N must be >= 0.
+   
+//       Prompt before starting: 
+   
+//            "Enter N, the #values (must be >= 0): "
+   
+//       Prompt for each value: 
+   
+//            "Enter next value: "
+   
+// ----------------------------------------------------------------
+void Load(int A[], int & Asize)
+{
+   cout << "Enter N, the #values (must be >= 0): ";
+   
+   cin >>Asize;
+   cout<<endl;
+
+   for(int i=0; i<Asize; i++)
+   {
+   cout<<"Enter next value: ";
+   cin >>A[i];
+   }
+}
+
+// ----------------------------------------------------------------
+   
+// Function: Display the values in array, ALL ON ONE LINE.
+   
+//
+   
+//           Output format: xx VALUES in First: xx xx xx xx ... xx
+// ----------------------------------------------------------------
+void Display(string OutputLabel, int B[], int Bsize)
+{
+   cout<<Bsize<<OutputLabel;
+   for(int k=0; k<Bsize; k++)
+   {
+   	cout<< setprecision(2) << fixed << B [k] <<" ";
+   }
+   cout<<endl;
+}
+
+
+// ----------------------------------------------------------------
+   
+// Function: Display values in array, IN REVERSE ORDER, all on one line.
+   
+//
+   
+//       Output format: OutputLabel xx xx xx xx ... xx
+   
+// ----------------------------------------------------------------
+void DisplayReverse(string OutputLabel, int C[], int Csize)
+{
+   cout<<OutputLabel;
+   for(int j=Csize-1; j>=0; j--)
+   {
+   	cout << setprecision(2) << fixed << C[j] <<" ";
+   }
+   cout<<endl;
+}
+
+
+
+// ----------------------------------------------------------------
+   
+// Function: Determine the largest value in array.
+   
+// ----------------------------------------------------------------
+int MaxValue (int MAX[], int Msize )
+{
+   int max=MAx[0];
+   for(int i=1; i<Msize; i++)
+   {
+   	if (max<MAX[i])
+   	{
+   	  max=MAX[i];
+   	}
+   	
+   }
+ return max;
+}
+
+
+// ----------------------------------------------------------------
+   
+// Function: Determine the smallest value in array.
+   
+// ----------------------------------------------------------------
+void Smallest(int MIN[], int Msize, int & minvalue )
+{
+   minvalue = MIN[0];
+   for(int i=1; i<Msize; i++)
+   {
+   	if (minvalue > MIN[i])
+   	{
+   	  minvalue = MIN[i];
+   	}
+   }
+}
+
+
+
+// ----------------------------------------------------------------
+   
+// Function: Calculate the sum of the values in array.
+   
+// ----------------------------------------------------------------
+int ArraySum(int SUM[], int Ssize )
+{
+   int sum = 0
+   for(int i=0; i<Ssize; i++)
+   {
+   	sum+=SUM[i];
+   }
+}
+
+// ----------------------------------------------------------------
+  
+// Function: Determine the POSITION of the smallest value in array.
+   
+// ----------------------------------------------------------------
+  
+int minPosition(int MIN[], int Msize )
+{
+   int min=MIN[0];
+   int minpos=0;
+   for(int k=1; k<Msize; k++)
+   {
+   	if (min > First[k])
+   	{
+   		min = MIN[k];
+   		minpos=k;
+   	}
+   }
+ return minpos;
+}
+
+// ----------------------------------------------------------------
+   
+// Function: For each element in the first array A, store the square of 
+   
+//       the value into the corresponding element in the second array.
+   
+// ----------------------------------------------------------------
+void MakeSquare(int Size, int A[], int B[])
+{
+   for(int i=0; i<Size; i++)
+   {
+   	B[i] = A[i] * A[i];
+   }
+}
+
+
+// ----------------------------------------------------------------
+   
+// Function: Write each value in array to a file named 'arraySecond'. 
+   
+//     Write ALL values on the same line (values separated by one space).
+   
+//
+   
+//       Output format: xx xx xx xx ... xx
+   
+// ----------------------------------------------------------------
+void SaveToFile(int Xsize, int X[])
+{
+   ofstream outF
+   outF.open("arraySecond");
+   for(int i = 0; i < Xsize; i++)
+   {
+   	outF << setprecision(2) << fixed << X[i] << " ";
+   }
+   
+   outF<<endl;
+   outF.close();
+}
+
+
+// ----------------------------------------------------------------
+   
+// Function: For each element in the first and second arrays, 
+   
+//           store the sum of the elements into the corresponding 
+   
+//           element in the third array.
+   
+//
+   
+//        Note: A[i] + B[i] ==> C[i]
+   
+// ----------------------------------------------------------------
+void SumArray(int Size, int A[], int B[], int C[])
+{
+   for(int i=0; i<Size; i++)
+   {
+   	C[i] = A[i] + B[i];
+   }
+}
+
+
+// ----------------------------------------------------------------
+   
+// Function: Write the values in the array to the open ouput file.
+   
+//           Write ONE VALUE PER LINE, using an output field of width 5.
+   
+//
+   
+//       Output format: xxxxx 
+   
+//                      xxxxx
+   
+//                      ...
+   
+//                      xxxxx
+   
+// ----------------------------------------------------------------
+void SaveArray(ostream & outF, int Zsize, int Z[])
+{
+   for(int i=0; i<Zsize; i++)
+   {
+   	outF << setw(5) << Z[i] << endl;
+   }
+}

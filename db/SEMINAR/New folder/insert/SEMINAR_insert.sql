@@ -1,0 +1,10 @@
+insert into SEMINAR values(001,'Intro to Winning','Atlanta', TO_TIMESTAMP('2014-NOV-30 12:00:00', 'YYYY-MON-DD HH24:MI:SS'));
+insert into SEMINAR values(002,'Midlevel Winning','Tampa', TO_TIMESTAMP('2014-DEC-15 12:00:00', 'YYYY-MON-DD HH24:MI:SS'));
+insert into SEMINAR values(003,'Intro to Winning','Gainesville', TO_TIMESTAMP('2015-JAN-12 08:00:00', 'YYYY-MON-DD HH24:MI:SS'));
+insert into SEMINAR values(004,'Advanced Winning','Charleston', TO_TIMESTAMP('2015-FEB-20 17:30:00', 'YYYY-MON-DD HH24:MI:SS'));
+insert into SEMINAR values(005,'Intro to Winning','Augusta', TO_TIMESTAMP('2015-MAR-02 08:00:00', 'YYYY-MON-DD HH24:MI:SS'));
+insert into SEMINAR values(010,'Intro to Winning','Atlanta',NULL);
+insert into SEMINAR values(020,'Midlevel Winning','Tampa',NULL);
+insert into SEMINAR values(030,'Intro to Winning','Gainesville',NULL);
+insert into SEMINAR values(040,'Advanced Winning','Charleston',NULL);
+insert into SEMINAR values(050,'Intro to Winning','Augusta',NULL );

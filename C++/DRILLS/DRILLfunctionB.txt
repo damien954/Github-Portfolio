@@ -1,0 +1,272 @@
+Problem #1:         
+-------------------------------
+[Points = 5]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           MMMM+aBcaBcaBc
+//           Ans: 4 M aBc 3
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void Mystery(int q, char C)
+{
+    for (int i=1; i<=q; i++) cout << C ;
+}
+void Guess(string s, int r)
+{
+    for (int k=1; k<=r; k++) cout << s;
+}
+int main()
+{
+   int char_count, str_count;
+   char character;
+   string str;
+
+   cin >> char_count >> character;
+   cin >> str >> str_count;
+
+   Mystery(char_count, character);
+   cout << '+';
+   Guess(str, str_count);
+   cout << endl;
+
+   return 0;
+}//main
+
+Problem #2:         
+-------------------------------
+[Points = 4]
+
+// --------------------------------------------------------------------
+// Function: Fix the ReadNum function so that it works correctly.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+// ------------------------------------------
+// Read integer value. DO NOT ISSUE A PROMPT.
+// ------------------------------------------
+void ReadNum(int & num)
+{
+   cin >> num;
+}
+
+#include "mainpt60085a.cpp"
+
+Problem #3:         
+-------------------------------
+[Points = 4]
+
+// --------------------------------------------------------------------
+// Function: Fix the ReadNum function so that it works correctly.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+// ------------------------------------------
+// Read integer value. DO NOT ISSUE A PROMPT.
+// ------------------------------------------
+void ReadNum(int & num)
+{
+   cin >> num;
+}
+
+int main()
+{
+   int value = -999;    // Input value.
+
+   ReadNum(value);
+   cout << ':' << value << ':' << endl;
+
+   return 0;
+}//main
+
+
+Problem #4:         
+-------------------------------
+[Points = 3]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           +ZZZZZ
+//      Ans: W 4
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+void Mystery(int q, char X)
+{
+   cout << ':';
+   for (int i=1; i<=q; i++) cout << X;
+}
+void Guess(char s, int r)
+{
+    cout << '+';
+    for (int k=1; k<=r; k++) cout << s;
+}
+int main()
+{
+   char C;
+   int fox;
+
+   cin >> C >> fox;
+   if (fox % 2)
+      Mystery(fox, C);
+   else
+      Guess(C+3,fox+1);
+   cout << endl;
+
+   return 0;
+}//main
+
+Problem #5:         
+-------------------------------
+[Points = 5]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           GUESS==>15
+//   Ans: 5
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int Guess(int Q)
+{
+    int ans = 0;
+    while (Q > 0)
+       ans = ans + Q--;
+    return ans;
+}
+int main()
+{
+   int Num;        // Input value.
+
+   cin >> Num;
+   cout << "GUESS==>" << Guess(Num) << endl;
+
+   cout<<endl; return 0; // DO NOT DELETE.
+}//main
+
+Problem #6:         
+-------------------------------
+[Points = 5]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           DONE:ZZZZ
+//    Ans: 4 x x x x 
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int Mystery(int q)
+{
+    char L;
+    int c = 0;
+    for (int i=1; i<=q; i++)
+    {
+       cin >> L;
+       if (L == 'x') c++;
+    }
+    return c;
+}
+int main()
+{
+   char cat; int N,L;
+
+   cin >> N;
+   N = Mystery(N);
+
+   cout << endl << "DONE:";
+   for (int k=1; k<=N; k++)
+       cout << 'Z';
+   cout<<endl; return 0; // DO NOT DELETE.
+}//main
+
+Problem #7:         
+-------------------------------
+[Points = 5]
+
+// --------------------------------------------------------------------
+// Provide inputs so that the following output is produced:
+//
+//        :ANS = 50:
+//       Ans: 8 5
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int Sum(int l, int m) { return l+m; }
+int Prod(int p, int q) {return p*q; }
+void Show(string w1, string w2, int value)
+{  cout << endl << ":" << w1 << value << w2 << endl; }
+int main()
+{
+   int a,b,answer;
+
+   cin >> a >> b;
+
+   answer = Prod(a,b) + Sum(b,b);
+   Show("ANS = ", ":", answer);
+
+   return 0;
+}//main
+
+Problem #8:         
+-------------------------------
+[Points = 5]
+
+
+// --------------------------------------------------------------------
+// Function: Complete the function Max.
+// --------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int Max(int num1, int num2)
+{
+if(num1 > num2)
+   return num1;
+  else
+   return num2;
+}
+#include "mainpt60022a.cpp"
+
+Problem #9:         
+-------------------------------
+[Points = 4]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           GUESS==>45
+//     Ans:15
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+void Guess(int & Q)
+{
+    if (Q % 5)
+       Q = Q / 5;
+    else
+       Q = 3 * Q;
+}
+int main()
+{
+   int Num;        // Input value.
+   cin >> Num;
+   Guess(Num);
+   cout << "GUESS==>" << Num << endl;
+
+   return 0;
+}//main

@@ -1,0 +1,289 @@
+Problem #1:         
+-------------------------------
+[Points = 6]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:  1111 2222 3333
+//           Ans: 4 4
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   int N, M, i, j;
+   cin >> N >> M;
+   for (i=1; i<N; i++)
+   {
+      cout << " ";
+      for (j=1; j<=M; j++)
+         cout << i;
+   }
+   cout << endl;
+   return 0;
+}
+
+
+
+Problem #2:        
+-------------------------------
+[Points = 8]
+
+// ------------------------------------------------------------------
+// Function: Compute the sum of integer values typed in by the user.
+//           Stop adding when an input failure occurs.
+//
+// WARNING:   DO NOT PROMPT FOR INPUT.
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   int num, sum=0;
+   cin >> num;
+   while ( )
+   {
+    sum += num;
+	cin >> num;
+
+   }
+
+   cout << "SUM = " << sum <<endl; return 0; //DO NOT DELETE
+}
+
+
+Problem #3:         
+-------------------------------
+[Points = 12]
+
+// ------------------------------------------------------------------
+// Function: (1) Read a starting value (balance).
+//           (2) Repeat as long as the balance is positive
+//               a) read value.
+//               b) Subtract the value from the balance.
+//
+// Example:  Input: 15 4 3 2 8 4      ==> Output: BALANCE=-2
+//           Input: 1 5 7 2           ==> Output: BALANCE=-4
+//
+// REMINDER:  READ-CHECK-USE pattern required.
+// WARNING:   DO NOT PROMPT FOR INPUT.
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   int balance, value;
+   cin >> balance;
+   while (balance >0)
+   {
+     cin >> value;
+	 balance -= value;
+
+
+   }
+
+   cout << "BALANCE="  << balance << endl; return 0; //DO NOT DELETE
+}
+
+Problem #4:         
+-------------------------------
+[Points = 12]
+
+// ------------------------------------------------------------------
+// Function: Read 9 words from the keyboard, and print out the
+//           smallest value.
+//
+// Example:  Input:  the fat cow and the slow dog ate cake.
+//           Output: SMALL=ate
+//
+// Example:  Input:  Snaking through an aardvaark mound for his overdue supper.
+//           Output: SMALL=aardvaark
+//
+// WARNING:   DO NOT PROMPT FOR INPUT.
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   string word, smallest;
+   cin>>word;
+   smallest=word;
+  for(int k=1; k<9; k++)
+  {
+	    cin>>word;
+	    if(word <= smallest)
+	    smallest = word;
+  }
+   	 
+	 
+	  
+   cout << "SMALL= " << smallest <<endl; //DO NOT DELETE
+   return 0;
+}
+Problem #5:         
+-------------------------------
+[Points = 4]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out 27.
+//           Ans; 4 4 4 4 4 4 3 5
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   int n, a=0;
+
+   cin >> n;
+   while (n < 5)
+   {
+      a += n;
+      cin >> n;
+   }
+   cout << a << endl;
+   return 0;
+}
+
+Problem #6:         
+-------------------------------
+[Points = 9]
+
+// ------------------------------------------------------------------
+// Function: Read a stopping point from the keyboard.
+//           Count by 5, starting at 0, up to but not exceeding
+//           the stopping point, displaying each count.
+//
+// Example:  Input: 12         Output:  0 5 10
+//           Input: 4          Output:  0
+//
+// WARNING:   DO NOT PROMPT FOR INPUT.
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   int num=5, sum=0;
+   int StopHere;   // Stopping point: count does not execeed this value.
+   cin >> StopHere;
+   while(sum<=StopHere)
+   {
+   cout <<sum<<" ";
+   sum+=num;
+   }
+
+   cout << "=5COUNT" << endl; return 0; //DO NOT DELETE
+}
+
+
+
+
+
+
+Problem #7:        
+-------------------------------
+[Points = 6]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out  1 5 25 125 625
+//           Ans: 1 625 5
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   int f, e, p;
+
+   cin >> f >> e >> p;
+
+   for (int r=f; r<=e; r*=p)
+   {
+      cout << r << ' ';
+   }
+
+
+   cout << endl; return 0; // DO NOT DELETE.
+}
+
+Problem #8:         
+-------------------------------
+[Points = 12]
+
+// ------------------------------------------------------------------
+// Function: Read a count from the keyboard (variable N).
+//           Compute the sum of N input values (whole numbers).
+//
+// Example:  Input:  4   3 2 1 4        Input:  0
+//           Output: SUM=10             Output: SUM=0
+//
+// WARNING:   DO NOT PROMPT FOR INPUT.
+// ------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main()
+{
+   int N;   // # input values to read.
+   int num, sum=0;
+   cin >> N;
+   for(int i=0; i<N; i++)
+   {
+   cin >> num;
+   sum += num;
+   }
+
+   cout << "SUM=" << sum << endl; return 0; //DO NOT DELETE
+}
+
+
+Problem #9:       
+-------------------------------
+[Points = 6]
+
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out  RXXXQQQQQ
+//           Ans: R X Q
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int main()
+{
+   char L;
+   int r, c;     // Loop variables.
+
+   for (r=1; r<=5; r+=2)
+   {
+      cin >> L;
+      for (c=1; c<=r; c++)
+         cout << L;
+   }
+   cout << endl;
+   return 0;
+}
+0 / 75 POINTS EARNED IN THIS PROBLEM SET:
+
+    [1]  pts = TBD / 6
+    [2]  pts = TBD / 8
+    [3]  pts = TBD / 12
+    [4]  pts = TBD / 12
+    [5]  pts = TBD / 4
+    [6]  pts = TBD / 9
+    [7]  pts = TBD / 6
+    [8]  pts = TBD / 12
+    [9]  pts = TBD / 6
+
+
+
+
+
+
+
+

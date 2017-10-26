@@ -1,0 +1,467 @@
+SQL> @ec
+SP2-0310: unable to open file "ARTIST.sql"
+SP2-0310: unable to open file "COMPANY.sql"
+SP2-0310: unable to open file "COMMERCIAL.sql"
+SP2-0310: unable to open file "PERFROMS.sql"
+SQL> @ec
+drop table ARTIST cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table COMPANY cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table COMMERCIAL cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table PERFROMS cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+SQL> @ec_desc
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ART_ID                                    NOT NULL NUMBER(4)
+ ART_NAME                                           VARCHAR2(20)
+ ART_BACKUP                                         NUMBER(4)
+ ART_FEE                                            NUMBER(7,2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMP_ID                                   NOT NULL NUMBER(5)
+ COMP_NAME                                          VARCHAR2(20)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMM_CODE                                 NOT NULL NUMBER(5)
+ COMM_PROD                                          VARCHAR2(20)
+ COMP_ID                                            NUMBER(2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PERF_ROLE                                          VARCHAR2(30)
+ PERF_DATE                                          DATE
+ ART_ID                                    NOT NULL NUMBER(4)
+ COMP_ID                                   NOT NULL NUMBER(5)
+
+SQL> @ec_alter
+
+Table altered.
+
+SQL> @ec_desc
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ART_ID                                    NOT NULL NUMBER(4)
+ ART_NAME                                           VARCHAR2(20)
+ ART_BACKUP                                         NUMBER(4)
+ ART_FEE                                            NUMBER(7,2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMP_ID                                   NOT NULL NUMBER(5)
+ COMP_NAME                                          VARCHAR2(20)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMM_CODE                                 NOT NULL NUMBER(5)
+ COMM_PROD                                          VARCHAR2(20)
+ COMP_ID                                            NUMBER(2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PERF_ROLE                                          VARCHAR2(30)
+ PERF_DATE                                          DATE
+ ART_ID                                    NOT NULL NUMBER(4)
+ COMP_ID                                   NOT NULL NUMBER(5)
+
+SQL> @ec_insert
+SP2-0310: unable to open file "ec_insert.sql"
+SQL> @eci
+insert into ARTIST values(1000,'MIKE',2000,125.00)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_BACKUP_ID_FK) violated - 
+parent key not found 
+
+
+insert into ARTIST values(2000,'JOHN',3000,150.25)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_BACKUP_ID_FK) violated - 
+parent key not found 
+
+
+insert into ARTIST values(3000,'BRATT',2000,175.50)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_BACKUP_ID_FK) violated - 
+parent key not found 
+
+
+insert into ARTIST values(4000,'MATT',5000,200.75)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_BACKUP_ID_FK) violated - 
+parent key not found 
+
+
+insert into ARTIST values(5000,'ZACK',1000,225.00)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_BACKUP_ID_FK) violated - 
+parent key not found 
+
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+insert into PERFROMS values('Dance',to_date('09-apr-2015', 'DD-MON-YYYY'),5000,10)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_ID_2FK) violated - parent key 
+not found 
+
+
+insert into PERFROMS values('Sing',to_date('01-mar-2016', 'DD-MON-YYYY'),4000,20)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_ID_2FK) violated - parent key 
+not found 
+
+
+insert into PERFROMS values('Drums',to_date('11-nov-2015', 'DD-MON-YYYY'),3000,30)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_ID_2FK) violated - parent key 
+not found 
+
+
+insert into PERFROMS values('flute',to_date('25-dec-2014', 'DD-MON-YYYY'),2000,40)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_ID_2FK) violated - parent key 
+not found 
+
+
+insert into PERFROMS values('Guitar',to_date('30-nov-2014', 'DD-MON-YYYY'),1000,50)
+*
+ERROR at line 1:
+ORA-02291: integrity constraint (DCUNNINGHAM.ART_ID_2FK) violated - parent key 
+not found 
+
+
+SQL> @ec_show
+
+no rows selected
+
+
+   COMP_ID COMP_NAME                                                            
+---------- --------------------                                                 
+        10 Pesi                                                                 
+        20 Coke                                                                 
+        30 Apple                                                                
+        40 Beats                                                                
+        50 DQ                                                                   
+
+
+ COMM_CODE COMM_PROD               COMP_ID                                      
+---------- -------------------- ----------                                      
+     10111 Summer                       10                                      
+     10222 Winter                       20                                      
+     10333 Spring                       30                                      
+     10444 Fall                         40                                      
+     10555 Autumn                       50                                      
+
+
+no rows selected
+
+SQL> @drop2
+drop table ARTIST
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+drop table COMPANY
+           *
+ERROR at line 1:
+ORA-02449: unique/primary keys in table referenced by foreign keys 
+
+
+
+Table dropped.
+
+
+Table dropped.
+
+SQL> @drop2
+
+Table dropped.
+
+
+Table dropped.
+
+drop table COMMERCIAL
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+drop table PERFROMS
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> @ec
+drop table ARTIST cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table COMPANY cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table COMMERCIAL cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+drop table PERFROMS cascade constraint
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+
+Table created.
+
+SQL> @ec_desc
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ART_ID                                    NOT NULL NUMBER(4)
+ ART_NAME                                           VARCHAR2(20)
+ ART_BACKUP                                         NUMBER(4)
+ ART_FEE                                            NUMBER(7,2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMP_ID                                   NOT NULL NUMBER(5)
+ COMP_NAME                                          VARCHAR2(20)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ COMM_CODE                                 NOT NULL NUMBER(5)
+ COMM_PROD                                          VARCHAR2(20)
+ COMP_ID                                            NUMBER(2)
+
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ PERF_ROLE                                          VARCHAR2(30)
+ PERF_DATE                                          DATE
+ ART_ID                                    NOT NULL NUMBER(4)
+ COMP_ID                                   NOT NULL NUMBER(5)
+
+SQL> @eci
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+SQL> @ec_show
+
+    ART_ID ART_NAME             ART_BACKUP    ART_FEE                           
+---------- -------------------- ---------- ----------                           
+      1000 MIKE                       2000        125                           
+      2000 JOHN                       3000     150.25                           
+      3000 BRATT                      2000      175.5                           
+      4000 MATT                       5000     200.75                           
+      5000 ZACK                       1000        225                           
+
+
+   COMP_ID COMP_NAME                                                            
+---------- --------------------                                                 
+        10 Pesi                                                                 
+        20 Coke                                                                 
+        30 Apple                                                                
+        40 Beats                                                                
+        50 DQ                                                                   
+
+
+ COMM_CODE COMM_PROD               COMP_ID                                      
+---------- -------------------- ----------                                      
+     10111 Summer                       10                                      
+     10222 Winter                       20                                      
+     10333 Spring                       30                                      
+     10444 Fall                         40                                      
+     10555 Autumn                       50                                      
+
+
+PERF_ROLE                      PERF_DATE     ART_ID    COMP_ID                  
+------------------------------ --------- ---------- ----------                  
+Dance                          09-APR-15       5000         10                  
+Sing                           01-MAR-16       4000         20                  
+Drums                          11-NOV-15       3000         30                  
+flute                          25-DEC-14       2000         40                  
+Guitar                         30-NOV-14       1000         50                  
+
+SQL> @ec_alter
+
+Table altered.
+
+SQL> @ec_show
+
+    ART_ID ART_NAME             ART_BACKUP    ART_FEE                           
+---------- -------------------- ---------- ----------                           
+      1000 MIKE                       2000        125                           
+      2000 JOHN                       3000     150.25                           
+      3000 BRATT                      2000      175.5                           
+      4000 MATT                       5000     200.75                           
+      5000 ZACK                       1000        225                           
+
+
+   COMP_ID COMP_NAME                                                            
+---------- --------------------                                                 
+        10 Pesi                                                                 
+        20 Coke                                                                 
+        30 Apple                                                                
+        40 Beats                                                                
+        50 DQ                                                                   
+
+
+ COMM_CODE COMM_PROD               COMP_ID                                      
+---------- -------------------- ----------                                      
+     10111 Summer                       10                                      
+     10222 Winter                       20                                      
+     10333 Spring                       30                                      
+     10444 Fall                         40                                      
+     10555 Autumn                       50                                      
+
+
+PERF_ROLE                      PERF_DATE     ART_ID    COMP_ID                  
+------------------------------ --------- ---------- ----------                  
+Dance                          09-APR-15       5000         10                  
+Sing                           01-MAR-16       4000         20                  
+Drums                          11-NOV-15       3000         30                  
+flute                          25-DEC-14       2000         40                  
+Guitar                         30-NOV-14       1000         50                  
+
+SQL> spool off

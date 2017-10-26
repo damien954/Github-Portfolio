@@ -1,0 +1,167 @@
+// ------------------------------------------------------------------
+// File name:   myWebProfile.cpp
+// Assign ID:   PROG1  
+// Due Date:    01/15/15 at 11 
+//
+// Purpose:     
+//
+// Author:      dcunningham Damien Cunningham
+// ;//comments
+// ------------------------------------------------------------------
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main()
+{
+   // ----------------------------------------------------------------------
+   //  Declare variables
+   // ----------------------------------------------------------------------
+   
+   string FirstName,LastName,Major,Bio_FileName,BioSketch;
+   int GradYear;
+   string str2="<br>", str,Line,line;
+
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+   
+   //-| ----------------------------------------------------------------------
+   //-| 1. Read first name of student.
+   //-| ----------------------------------------------------------------------
+   cout<<"Enter first name: "; 
+   cin >> FirstName;
+   //-| ----------------------------------------------------------------------
+   //-| 2. Read last name of student.
+   //-| ----------------------------------------------------------------------
+   cout<<"Enter last name: ";
+   cin >> LastName;
+   //-| ----------------------------------------------------------------------
+   //-| 3. Read major (e.g., IT or Information Technology or Computer Science)
+   //-| ----------------------------------------------------------------------
+   getline(cin,Major);
+   cout<<"Enter major (e.g., Computer Science, or IT): ";
+   getline(cin, Major);
+   //-| ----------------------------------------------------------------------
+   //-| 4. Read expected year of graduation.
+   //-| ----------------------------------------------------------------------
+   cout<<endl;
+   cout<<"Enter expected year of graduation: ";
+   cin >> GradYear;
+   //-| ----------------------------------------------------------------------
+   //-| 5. Read name of file containing the student's biographical sketch.
+   //-| ----------------------------------------------------------------------
+   cout<<"Enter name of file containing biographical sketch: ";
+   cin >> Bio_FileName;
+   //-| ----------------------------------------------------------------------
+   //-| 6. Open file containing biographical sketch.
+   //-| ----------------------------------------------------------------------
+  
+   ifstream inF;
+   inF.open(Bio_FileName.c_str());
+   if (inF.fail())
+   { cout<<"FATAL ERROR: Can not open file ";
+     cout<<" ... TERMINATING ...\n";
+     exit(1);
+   }
+   //-| ----------------------------------------------------------------------
+   //-| 7. Form the bioSketch string from the lines in the biographical sketch file.
+   //-|    a) if an input line is empty, append the <br> tag onto bioSketch string.
+   //-|    b) otherwise, append a space and the input line to bioSketch.
+   //-| ----------------------------------------------------------------------
+   
+   getline(inF, Line); 
+   while (!inF.eof())
+   {
+     if (Line.size()==0)
+     {
+      BioSketch += Line.append(str2);
+     }
+     else
+     {
+      getline(inF, Line);
+      }
+   } 
+   //-| ----------------------------------------------------------------------
+   //-| 8. Copy the 'profile_header.html' and 'profile_footer.html' files from
+   //-|    the public repository.
+   //-| ----------------------------------------------------------------------
+   system("OPcopy profile_header.html");
+   system("OPcopy profile_footer.html");
+ 
+   //-| ----------------------------------------------------------------------
+   //-| 9. Copy file 'profile_header.html' into file 'myProfile.html'.
+   //-| ----------------------------------------------------------------------
+   system("OPcopy profile_header.html  myProfile.html");   
+
+   //-| ----------------------------------------------------------------------
+   //-| 10. Open output file 'myProfile.html' in append mode.
+   //-| ----------------------------------------------------------------------
+  ofstream outF;
+  outF.open("myProfile.html", std::ios::app);
+   //-| ----------------------------------------------------------------------
+   //-| 11. For each of the rows in the profile, write the HTML for the 
+   //-|     table row to output file.
+   //-|        <tr>
+   //-|        <td> label </td>
+   //-|        <td> data </td>
+   //-|        </tr>
+   //-|  
+   //-|     NOTE: There are four(4) rows, with the labels
+   //-|           NAME, MAJOR, GRADUATION, BIO SKETCH.
+   //-| ----------------------------------------------------------------------
+   cout <<"+See published file at http://www.cis.famu.edu/myProfile.html "; 
+   outF <<"<tr><td> NAME: </td><td>"<< FirstName + LastName<< "</td></tr> ";
+   outF <<"<tr><td> MAJOR: </td><td>"<< Major << "</td></tr> ";
+   outF <<"<tr><td> GRADUATION: </td><td>"<< GradYear << "</td></tr> ";
+   outF <<"<tr><td> BIO+SKETCH: </td><td>"<< BioSketch << "</td></tr> ";
+   //-| ----------------------------------------------------------------------
+   //-| 12. Open input file 'profile_footer.html'.
+   //-|     a) if file can't be opened issue a message and terminate.
+   //-| ----------------------------------------------------------------------
+   inF.open("profile_footer.html");
+   if (inF.fail())
+   { cout<<"FATAL ERROR: Can not open file ";
+     cout<<" ... TERMINATING ...\n";
+     exit(1);
+   }
+   
+
+   //-| ----------------------------------------------------------------------
+   //-| 13. Read each line from the input file, writing it to the output file.
+   //-| ----------------------------------------------------------------------
+   getline(inF, line); 
+   while (!inF.eof())
+   {
+      getline(inF, line);
+      outF<<line;
+   } 
+
+
+   
+   //-| ----------------------------------------------------------------------
+   //-| 14. Close all files.
+   //-| ----------------------------------------------------------------------
+   inF.close();
+   outF.close();
+   inF.close();
+   //-| ----------------------------------------------------------------------
+   //-| 15. Publish the 'myProfile.html' output file.
+   //-|     a) Copy the publish program 'publishHTML.csh' from public repository.
+   //-|     b) Run the publish program passing file 'myProfile.html'.
+   //-|      
+   //-|      HINT: The Unix command is:  csh publishHTML.csh myProfile.html
+   //-| ----------------------------------------------------------------------
+   system("OPcopy publishHTML.csh");
+   system("csh publishHTML.csh myProfile.html");
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship again.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+
+   return 0;
+
+}//main

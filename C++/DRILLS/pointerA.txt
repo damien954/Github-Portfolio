@@ -1,0 +1,236 @@
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Declare BOX pointer Bp and intialize it to point to BOX object B.
+// --------------------------------------------------------------------
+class BOX
+{
+  public:
+     string n;
+     BOX(){y=3;n="TBA";}
+     void K(int c){y+=c;}
+     void Show(){cout << n << " "<<y<<endl;}
+  private:
+     int y;
+};
+int main()
+{
+   BOX B; int t; cin >> t; B.K(t);  // DO NOT DELETE.
+   BOX b;                           // DO NOT DELETE.
+
+        BOX *Bp;
+        Bp = &B;
+
+   b = *Bp;    // DO NOT DELETE.
+   b.Show();   // DO NOT DELETE.
+   return 0;
+}//main
+
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Complete the program to allocate dynamically two PLAYER
+//           records, initializing their fields with values read from the
+//           keyboard. Then call the ShowPlayers function.
+//
+// --------------------------------------------------------------------
+struct PLAYER
+{
+   int JerseyNumber;
+   int Points;
+   int Rebounds;
+};
+void ShowPlayers(PLAYER * x, PLAYER * y)
+{
+   cout << x -> JerseyNumber << "/" << y -> JerseyNumber << " + "
+        << x -> Points << "/" << y -> Points << " + "
+        << x -> Rebounds << "/" << y -> Rebounds << endl;
+}
+
+int main()
+{
+   PLAYER * p1, * p2; // POINTERS for two players *** DO NOT DELETE.
+        p1 = new PLAYER(); 
+        p2 = new PLAYER();
+        
+        int jersey, pts, reb;          // DO NOT DELETE.
+
+   //-| Read data for first player; allocate player and assign values
+
+   //-|      read from keyboard.
+        cin >> jersey >> pts >> reb;   // DO NOT DELETE.
+        p1->JerseyNumber = jersey;
+        p1->Points = pts;
+        p1->Rebounds = reb;
+
+
+   //-| Read data for second player; allocate player and assign values
+   //-|      read from keyboard.
+        cin >> jersey >> pts >> reb;   // DO NOT DELETE.
+        p2->JerseyNumber = jersey;
+        p2->Points = pts;
+        p2->Rebounds = reb;
+
+
+   ShowPlayers(p1, p2);   // DO NOT DELETE.
+   return 0;
+
+}//main
+
+
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Call MakeBOX and ShowBOX to create a dynamically allocated
+//           BOX object, and to display its value.
+// --------------------------------------------------------------------
+class BOX
+{
+  public:
+     int y;
+     BOX(){y=3;n="TBA";}
+     BOX(string name, int val){y=val;n=name;}
+     void K(int c){y+=c;}
+     void Show(){cout << n << " " << y <<endl;}
+  private:
+     string n;
+};
+
+BOX * MakeBOX()
+{
+   string s; int n;
+   cin >> s >> n;
+   BOX * b = new BOX(s, n);
+   return b;
+}
+
+void ShowBOX (BOX * bp){cout << bp->y/2 <<": "; bp ->Show();}
+int main()
+{
+
+        BOX * myBox = MakeBOX();
+        ShowBOX(myBox);
+
+   return 0;
+}//main
+
+
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Complete the following program to read in a name and then a
+//           width, and to store them into the dynamically allocated
+//           CLASS object. Then call the Show member function.
+// --------------------------------------------------------------------
+class CLASS
+{
+  private:
+     int length;string name; float width;
+  public:
+     CLASS(){length=14;name="room"; width=16.5;}
+     void Set_Width(float W){width = W;}
+     void Set_Name(string N){name = N;}
+     void Show(){cout << length*length << ' ' << name+name << " " << width/2 << endl;}
+};
+
+int main()
+{
+        CLASS *p = new CLASS;  // DO NOT DELETE.//
+
+        string name; float Width;
+        cin >> name;
+        cin >> Width; 
+
+        p->Set_Width(Width);
+        p->Set_Name(name);
+
+     cout << endl;  // DO NOT DELETE.
+
+   p -> Show(); // DO NOT DELETE.
+                
+   return 0;
+
+}//main
+
+
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Complete the following program to read values into
+//           dynamically allocated variable.
+//    NOTE: Read in the order in which the variables are allocated.
+// --------------------------------------------------------------------
+void ShowAnswer(int * p, int * q)
+{
+   cout << *p - *q << endl;
+}
+int main()
+{
+   int *xp = new int, *yp = new int;  // DO NOT DELETE.
+        cin >> *xp;
+        cin >> *yp;
+
+        
+
+   ShowAnswer(yp, xp); // DO NOT DELETE.
+   return 0;
+
+}//main
+
+// --------------------------------------------------------------------
+// Function: Complete the body of the swap function.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int w=0;
+void Fuzz(int m, int n) { cout << (w+n%10+ m%10)%10 << ":"; }
+void swap(int & m, int & n)
+{
+m = m+n;
+n = m-n;
+m = m-n;
+
+}//swap
+
+int main()
+{  // DO NOT DELETE ANY STATEMENTS in main..
+   int x, y;
+   cin >> x >> y;
+   cin >> w;
+   cout << endl << " ";
+   Fuzz(x,y);
+   cout << x << " " << y;
+   swap(x,y);
+   cout << endl << " ";
+   Fuzz(x,y);
+   cout << x << " " << y;
+   cout << endl; return 0;
+}//main
+
+
+#include <iostream>
+using namespace std;
+// --------------------------------------------------------------------
+// Function: Declare pointer variables ip and fp, initializing them to the
+//           addresses of variables i and f, respectively.
+// --------------------------------------------------------------------
+void ShowInt(int * p) { cout << *p << endl; }
+void ShowFloat(float * p) { cout << *p << endl; }
+int main()
+{
+   int i; float f;
+        int *ip;
+        float *fp;
+
+
+   cin >> i >> f; // DO NOT DELETE.
+   ip = &i;
+   fp = &f;
+   ShowFloat(fp); // DO NOT DELETE.
+   ShowInt(ip);   // DO NOT DELETE.
+   cout << i << " " << f << endl; // DO NOT DELETE.
+   return 0;
+}//main
+
+

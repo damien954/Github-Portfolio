@@ -1,0 +1,216 @@
+Problem #1:         
+-------------------------------
+[Points = 4]
+
+// --------------------------------------------------------------------
+// Function: Fix the ReadNum function so that it works correctly.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+// ------------------------------------------
+// Read integer value. DO NOT ISSUE A PROMPT.
+// ------------------------------------------
+void ReadNum(int & num)
+{
+   cin >> num;
+}
+int main()
+{
+   int numValues = -99; // Number of values.
+   int value = -999;    // Input value.
+
+   ReadNum(numValues);
+   for (int k=1; k<= numValues; k++)
+   {
+      ReadNum(value);
+      cout << ':' << value;
+   }
+   cout << endl;
+   cout<<endl; return 0; // DO NOT DELETE.
+}//main
+
+Problem #2:         
+-------------------------------
+[Points = 5]
+
+
+// --------------------------------------------------------------------
+// Provide inputs so that the following output is produced:
+//
+//        ANS = 74
+//  Ans: 7 5
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int Sum(int L, int M) { return L+M; }
+int Prod(int p, int q) {return p*q; }
+
+int main()
+{
+   int a,b,answer;
+
+   cin >> a >> b;
+
+   answer = Sum(Prod(a,a), Prod(b,b));
+   cout << "ANS = " << answer << endl;
+
+   cout<<endl; return 0; // DO NOT DELETE.
+}//main
+
+Problem #3:        
+-------------------------------
+[Points = 4]
+
+
+// --------------------------------------------------------------------
+// Function: Complete the body of function Add3.
+// --------------------------------------------------------------------
+#include <iostream>
+#include <iomanip>
+using namespace std;
+// ------------------------------------------
+// Read integer value. DO NOT ISSUE A PROMPT.
+// ------------------------------------------
+float Add3(float x, float y, float z)
+{
+ return x+y+z;
+}
+
+#include "mainpt60087a.cpp"
+
+Problem #4:       
+-------------------------------
+[Points = 4]
+
+// ------------------------------------------------------------------
+// Function: Run the following program and provide the input(s) to
+//           cause the program to print out:
+//
+//           ANS:BALLING
+//   Ans: the
+// ------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+void Mystery(string S)
+{
+  if (S.length() % 2)
+     cout << "BALLING";
+}
+int main()
+{
+   string str;
+   cin >> str;
+
+   cout << "ANS:";
+   Mystery(str);
+   cout << endl;
+
+   cout<<endl; return 0; // DO NOT DELETE.
+}//main
+
+Problem #5:        
+-------------------------------
+[Points = 6]
+// --------------------------------------------------------------------
+// Function: Fix the ReadNum function so that it works correctly.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+// ------------------------------------------
+// Read integer value. DO NOT ISSUE A PROMPT.
+// ------------------------------------------
+int ReadNum()
+{ 
+  int num;
+  cin >> num;
+  return num;
+}
+
+#include "mainpt60400a.cpp"
+
+
+
+
+Problem #6:         
+-------------------------------
+[Points = 7]
+
+// --------------------------------------------------------------------
+// Function: Fix errors in the functions Prod and Sum, if there are any.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+int Sum(int l, int m) { return l+m; }
+void Prod(int p, int q, int & answer) {answer = p * q; }
+
+#include "mainpt60222a.cpp"
+
+Problem #7:         
+-------------------------------
+[Points = 6]
+
+// --------------------------------------------------------------------
+// Function: Complete the Max function.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+void Max (int num1, int num2, int & ans)
+{
+  if(num1 < num2)
+   ans=num2;
+  else
+   ans=num1;
+}
+
+#include "mainpt60500a.cpp"
+
+
+Problem #8:         
+-------------------------------
+[Points = 6]
+
+// --------------------------------------------------------------------
+// Function: Complete the function Quotient. Return ZERO when divisor
+//           (num2) is ZERO.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+int Quotient(int num1, int num2)
+{
+  if (num2==0)
+   return 0;
+  else
+   return num1/num2;
+
+}
+
+#include "mainpt60322a.cpp"
+
+Problem #9:         
+-------------------------------
+[Points = 10]
+
+// --------------------------------------------------------------------
+// Function: Complete the body of the Read_Kth_Num function.
+// --------------------------------------------------------------------
+#include <iostream>
+using namespace std;
+// ------------------------------------------
+// Read the k'th input value. DO NOT ISSUE A PROMPT.
+// Example: when k = 3 and inputs are 4 6 8 10 12
+//          the desired value is 8.
+// ------------------------------------------
+void Read_Kth_Num(int k, int & value)
+{
+   cin >> k;
+   for (int i=1; i<=k-1; i++) 
+   {
+     cin >> value;
+   }
+   
+}
+
+#include "mainpt60300a.cpp"
+
+

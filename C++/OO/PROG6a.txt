@@ -1,0 +1,149 @@
+// ------------------------------------------------------------------
+// File name:   containerMain.cpp
+// Assign ID:   PROG6_containerMain -- PROG6a -- containerMain 
+// Due Date:    02/06/15 at 11 
+//
+// Purpose:     Give student experience working with a menu-driven program to
+//              manipulate a "container class" that uses arrays. 
+//
+// Author:      dcunningham Damien Cunningham
+//
+// ------------------------------------------------------------------
+
+
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+char Get_Menu_Choice( )
+{
+   char Choice;  // Menu choice.
+   //-| --------------------------------------------------------------
+   //-| 1. Display the menu.
+   //-| --------------------------------------------------------------
+   
+   cout << "+-------------------------------------------------------+" << endl;
+   cout << "| LIST MANAGER: Main Menu" << endl;
+   cout << "|" << endl;
+   cout << "| A) Load from keyboard" << endl;
+   cout << "| B) Load from file" << endl;
+   cout << "| C) Display array (horizontal) " << endl;
+   cout << "| D) Save to file" << endl;
+   cout << "| E) Clear list to the empty state" << endl;
+   cout << "| F) Display number of values in list " << endl;
+   cout << "| G) Add value as last value in list" << endl;
+   cout << "| H) Remove last value from list" << endl;
+   cout << "| I) Display max value" << endl;
+   cout << "| J) Display min value" << endl;
+   cout << "| K) Determine whether specified value is in list " << endl;
+   cout << "|" << endl;
+   cout << "| L) Display position of specified value " << endl;
+   cout << "| M) Add value as first value in list " << endl;
+   cout << "| N) Add value at specified list position" << endl;
+   cout << "| O) Add value at its sorted position in list" << endl;
+   cout << "| P) Remove first value from list" << endl;
+   cout << "| Q) Remove value at specified position" << endl;
+   cout << "| R) Display median value" << endl;
+   cout << "|" << endl;
+   cout << "| X) Exit from the program " << endl;
+   cout << "+-------------------------------------------------------+" << endl;
+   cout << endl;
+   //-| --------------------------------------------------------------
+   //-| 2. Read user choice.
+   //-| --------------------------------------------------------------
+   cout << "Enter Menu Choice: ";
+   cin >> Choice;
+   cout << endl;
+
+   return Choice;
+} // Get_Menu_Choice
+
+
+//-| --------------------------------------------------------------
+//-| Perform the selected operation.
+//-| --------------------------------------------------------------
+//TEMPLATE: void Perform_Menu_Choice(char choice, classTYPE & classParameter)
+void Perform_Menu_Choice(char choice, int & Answer)
+{
+   int left, right;  // Left and right operands for arithmetic operation.
+
+   switch (toupper(choice))
+   {
+      case 'A': // Load from keyboard
+               cout<<"Enter #values to load: ";
+               break;
+      case 'B': // Load from file
+      case 'C': // Display array (horizontal)
+      case 'D': // Save to file
+      case 'E': // Clear list to the empty state
+      case 'F': // Display number of values in list
+      case 'G': // Add value as last value in list
+      case 'H': // Remove last value from list
+      case 'I': // Display max value
+      case 'J': // Display min value
+      case 'K': // Determine whether specified value is in list 
+      case 'L': // Display position of specified value
+      case 'M': // Add value as first value in list
+      case 'N': // Add value at specified list position
+      case 'O': // Add value at its sorted position in list
+      case 'P': // Remove first value from list
+      case 'Q': // Remove value at specified position
+      case 'R': // Display median value
+               cout << endl << "TERMINATING containerMain ..." << endl;
+               break;     
+   
+      case 'X': // Exit 
+               cout << endl << "TERMINATING PROGRAM ..." << endl;
+               cout << endl << "TERMINATING containerMain ..." << endl;
+               break;
+   
+      default:  // Bad Input.
+               cout << endl << "BAD MENU CHOICE ... retry" << endl;
+               break;
+
+   }//end_switch
+
+} // Perform_Menu_Choice
+
+
+int main()
+{
+   //----------------------------------------------------------------------
+   // Declare variables for program.
+   //----------------------------------------------------------------------
+   char choice;      // Call plan.
+   int Left;         // Left operand.
+   int Right;        // Right operand.
+   int Answer;       // Result of the operation.
+
+   
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+   //-| --------------------------------------------------
+   //-| STANDARD MENU-DRIVEN PATTERN:
+   //-|   (a) DO-WHILE loop
+   //-|          Display menu
+   //-|          Read user choice
+   //-|          Perform actions based on choice
+   //-| --------------------------------------------------
+   do
+   { 
+      choice = Get_Menu_Choice();
+
+      Perform_Menu_Choice(choice, Answer);
+   }
+   while (toupper(choice) != 'Q');
+
+   
+   //-| ----------------------------------------------------------------------
+   //-| Print the copyright notice declaring authorship.
+   //-| ----------------------------------------------------------------------
+   cout << endl << "(c) 2015, dcunningham Damien Cunningham" << endl << endl; 
+
+   return 0;
+
+}//main
